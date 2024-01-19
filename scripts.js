@@ -9,7 +9,7 @@
 // Desde el siguiente elemento (j=i+1) para no sumar el elemento con si mismo
 //
 // Time complexity = O(n^2)
-// Space complexity = O(n)
+// Space complexity = O(1)
 
 function getPairWithRequiredSum(numsArray, requiredSum) {
   for (let i = 0; i < numsArray.length; i++) {
