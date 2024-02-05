@@ -1,17 +1,22 @@
 //  Sum of Two
 // ------------------------------------------------------------------------------------
 
-// 1)
-// Esta forma es la que primero se me ocurrió sin googlear nada, es la más intuitiva.
-// Iterar haciendo la combinatoria agarrando de a dos elementos
+// 1) Primera forma
+// Iterar haciendo la combinatoria, agarrando de a dos elementos
 // El loop exterior fija un numero
-// El loop interior itera desde el siguiente elemento haciendo las sumas
+// El loop interior itera desde el siguiente elemento haciendo las sumas de los dos elementos
 // Desde el siguiente elemento (j=i+1) para no sumar el elemento con si mismo
 //
 // Time complexity = O(n^2)
 // Space complexity = O(1)
 
 function getPairWithRequiredSum(numsArray, requiredSum) {
+  // Check inputs
+  if (numsArray.length <= 1 || typeof requiredSum !== "number") {
+    return null
+  }
+
+  // Loop suma
   for (let i = 0; i < numsArray.length; i++) {
     for (let j = i + 1; j < numsArray.length; j++) {
       if (numsArray[i] + numsArray[j] === requiredSum) {
@@ -46,6 +51,10 @@ function getPairWithRequiredSum(numsArray, requiredSum) {
 // Space complexity = O(n)
 
 function getPairWithRequiredSumHashMapVersion(numsArray, requiredSum) {
+  if (numsArray.length <= 1 || typeof requiredSum !== "number") {
+    return null
+  }
+
   const table = {}
 
   for (let i = 0; i < numsArray.length; i++) {
